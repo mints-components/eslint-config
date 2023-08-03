@@ -1,0 +1,19 @@
+{
+  "name": "@mints/eslint-config",
+  "packageManager": "yarn@3.6.1",
+  "version": "1.0.0",
+  "description": "Eslint Config for Mints Components",
+  "keywords": [
+    "mints",
+    "mints-components",
+    "eslint",
+    "config"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mints-components/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mints-components/eslint-config.git"
+  },
+  "main": "index.js"
+}
