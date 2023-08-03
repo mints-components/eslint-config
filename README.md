@@ -4,8 +4,8 @@
 
 ## Installation
 
-```
-$ yarn add @mints/eslint-config --save-dev
+```shell
+yarn add @mints/eslint-config --dev
 ```
 
 ## Usage
