@@ -15,5 +15,21 @@
     "type": "git",
     "url": "git+https://github.com/mints-components/eslint-config.git"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier . --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "pinst": "^3.0.0",
+    "prettier": "^3.0.0"
+  }
 }
