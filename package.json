@@ -9,6 +9,9 @@
     "eslint",
     "config"
   ],
+  "files": [
+    "index.js"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/mints-components/eslint-config#readme",
   "repository": {
