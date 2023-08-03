@@ -22,7 +22,7 @@
     "postpack": "pinst --enable"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,json,md}": [
       "prettier . --write"
     ]
   },
