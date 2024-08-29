@@ -16,7 +16,16 @@ module.exports = {
           'sibling',
           'index',
         ],
-        pathGroups: [{ pattern: '~/**', group: 'internal' }],
+        pathGroups: [
+          {
+            pattern: '~/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@/**',
+            group: 'internal',
+          },
+        ],
       },
     ],
   },
