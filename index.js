@@ -1,33 +1,81 @@
-module.exports = {
-  extends: ['react-app', 'react-app/jest', 'prettier'],
-  plugins: ['prettier'],
-  rules: {
-    'prettier/prettier': 'warn',
-    'import/order': [
-      'error',
-      {
-        alphabetize: { order: 'ignore' },
-        'newlines-between': 'always-and-inside-groups',
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-        ],
-        pathGroups: [
-          {
-            pattern: '~/**',
-            group: 'internal',
-          },
-          {
-            pattern: '@/**',
-            group: 'internal',
-          },
-        ],
-      },
-    ],
-    'react-hooks/exhaustive-deps': 'off',
+// 核心插件导入
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+import importPlugin from 'eslint-plugin-import';
+import prettier from 'eslint-plugin-prettier';
+
+export default [
+  { ignores: ['dist'] },
+
+  js.configs.recommended,
+
+  ...tseslint.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
   },
-};
+
+  // React
+  {
+    files: ['**/*.{jsx,tsx}'],
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+    },
+    rules: {
+      ...react.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+
+  // Import
+  {
+    plugins: {
+      import: importPlugin,
+    },
+    rules: {
+      'import/order': [
+        'error',
+        {
+          alphabetize: { order: 'asc', caseInsensitive: true },
+          'newlines-between': 'always',
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+          ],
+        },
+      ],
+    },
+  },
+
+  // Prettier
+  {
+    plugins: {
+      prettier,
+    },
+    rules: {
+      'prettier/prettier': 'warn',
+    },
+  },
+
+  // Customize
+  {
+    rules: {},
+  },
+];
