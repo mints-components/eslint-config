@@ -1670,6 +1670,9 @@ __metadata:
     lint-staged: ^13.2.3
     pinst: ^3.0.0
     prettier: ^3.0.0
+  peerDependencies:
+    eslint: ^8.0.0
+    prettier: ^3.0.0
   languageName: unknown
   linkType: soft
 
