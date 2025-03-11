@@ -1,6 +1,6 @@
 {
   "name": "@mints/eslint-config",
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@4.7.0",
   "version": "1.0.2",
   "description": "Eslint Config for Mints Components",
   "keywords": [
