@@ -51,6 +51,12 @@ export default [
         {
           alphabetize: { order: 'asc', caseInsensitive: true },
           'newlines-between': 'always',
+          pathGroups: [
+            {
+              pattern: '@/**',
+              group: 'internal',
+            },
+          ],
           groups: [
             'builtin',
             'external',
